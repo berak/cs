@@ -1,0 +1,65 @@
+<html>
+<head>
+<script>
+
+	function showThing(objname)
+	{
+		g.value = objname;
+		reflect();
+	}
+	
+	function reflectObj(obj, name)
+	{
+		o.innerHTML  = "<h2>"+obj+"</h2>\n";
+		for (i in obj) 
+		{
+			t = typeof i;
+			o.innerHTML  += "<a href='javascript:showThing(\"" + name + "." + i.toString() + "\");'>" + i.toString() + "</a>"+ "["+t+"]<br>\n";
+		}
+	}
+
+	function reflect()
+	{
+		//obj = g.value ? this[g.value] : this;
+		var name = "this";
+		var obj = this;
+		if ( g.value )
+		{
+			name = g.value;
+			obj = eval( name );;			
+		}
+		reflectObj( obj, name );
+	}
+	function init()
+	{
+		g = document.getElementById('input');
+		o = document.getElementById('output');
+	}
+	function writeIFrame()
+	{
+		debug.innerHTML = "<iframe id=\"fin\" src=\""	+ filename.value + "\"></iframe>" ;
+		dbg = document.getElementById('fin').contentWindow;
+		g.value = "this.dbg";
+		reflect();
+		reflect();
+	}
+</script>
+</head>
+<body onload="init();">
+	<table border="1" width="100%" height="80%">
+		<tr>
+			<td width="40%" valign="top">
+				<input id="input" size="80" value="" ><br>
+					<button onClick="reflect();" width="10">reflect</button><br>
+			</td>
+			<td>
+				<div id="output" bgcolor="#0000ff">.</div>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<button onClick="writeIFrame();">load</button>
+	<input id="filename"  width="180" value="amouse.html"><br>
+	<div id="debug"></div>
+</body>
+</html>
