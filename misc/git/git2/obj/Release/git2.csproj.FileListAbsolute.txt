@@ -1,0 +1,8 @@
+E:\code\cs\misc\git\git2\bin\Release\git2.exe
+E:\code\cs\misc\git\git2\bin\Release\git2.pdb
+E:\code\cs\misc\git\git2\obj\Release\ResolveAssemblyReference.cache
+E:\code\cs\misc\git\git2\obj\Release\git2.Properties.Resources.resources
+E:\code\cs\misc\git\git2\obj\Release\git2.csproj.GenerateResource.Cache
+E:\code\cs\misc\git\git2\obj\Release\git2.exe
+E:\code\cs\misc\git\git2\obj\Release\git2.pdb
+E:\code\cs\misc\git\git2\obj\Release\git2.Form1.resources
